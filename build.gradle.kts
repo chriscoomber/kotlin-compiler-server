@@ -51,10 +51,12 @@ plugins {
 allprojects {
     repositories {
         mavenCentral()
+        mavenLocal()
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-ide")
         maven("https://kotlin.bintray.com/kotlin-ide-plugin-dependencies")
         maven("https://jetbrains.bintray.com/intellij-third-party-dependencies")
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-compiler-for-ide")
+
     }
     afterEvaluate {
         dependencies {
@@ -81,6 +83,9 @@ dependencies {
     kotlinDependency("org.jetbrains.kotlin:kotlin-test:$kotlinVersion")
     kotlinDependency("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.4.2")
     kotlinJsDependency("org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion")
+
+    // Custom extra dependencies
+    kotlinDependency("chriscoomber:manydice:0.2.0")
 
     annotationProcessor("org.springframework:spring-context-indexer")
     implementation("org.springframework.boot:spring-boot-starter-web")
