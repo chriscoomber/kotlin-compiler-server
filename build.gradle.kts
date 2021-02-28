@@ -85,6 +85,7 @@ dependencies {
 
     // Custom extra dependencies
     kotlinDependency("chriscoomber:manydice:0.2.1")
+    kotlinJsDependency("chriscoomber:manydice-js:0.2.1")
 
     annotationProcessor("org.springframework:spring-context-indexer")
     implementation("org.springframework.boot:spring-boot-starter-web")
