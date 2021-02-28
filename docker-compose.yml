@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  compiler-server:
+    build:
+      context: .
+      dockerfile: docker/compiler-server/Dockerfile
+    ports:
+      - 8080:8080
+  reverse-proxy:
+    build: docker/reverse-proxy
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - compiler-server
